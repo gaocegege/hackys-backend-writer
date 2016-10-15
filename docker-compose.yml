@@ -11,3 +11,10 @@ writer:
     - "postgres:postgres"
     ports:
     - "8088:8088"
+
+reader:
+    image: gaocegege:hackys-reader:latest
+    links:
+    - "postgres:postgres"
+    ports:
+    - "8089:8089"
