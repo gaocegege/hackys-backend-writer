@@ -7,8 +7,27 @@
 	],
 	"Deps": [
 		{
+			"ImportPath": "github.com/Sirupsen/logrus",
+			"Comment": "v0.10.0-28-ga283a10",
+			"Rev": "a283a10442df8dc09befd873fab202bf8a253d6a"
+		},
+		{
 			"ImportPath": "github.com/ahmdrz/microsoft-cognitive-services/emotion",
 			"Rev": "52824e0cbc184f8df2dcf29b9c62c95bbbed304c"
+		},
+		{
+			"ImportPath": "github.com/emicklei/go-restful",
+			"Comment": "v1.2-3-gd74948d",
+			"Rev": "d74948d530a30ad5315b769d709626e94853a7d5"
+		},
+		{
+			"ImportPath": "github.com/emicklei/go-restful/log",
+			"Comment": "v1.2-3-gd74948d",
+			"Rev": "d74948d530a30ad5315b769d709626e94853a7d5"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "b776ec39b3e54652e09028aaaaac9757f4f8211a"
 		}
 	]
 }

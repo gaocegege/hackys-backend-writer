@@ -2,15 +2,21 @@
 package main
 
 import (
-	"github.com/gaocegege/hackys-backend-writer/cognitive"
+	"fmt"
+	"net/http"
+
+	"github.com/emicklei/go-restful"
+	"github.com/gaocegege/hackys-backend-writer/api"
 	"github.com/gaocegege/hackys-backend-writer/pkg/log"
 )
 
+const (
+	port = 8088
+)
+
 func main() {
-	result, err := cognitive.RecognizeText("gaocegege is awesome.")
-	if err != nil {
-		panic(err)
-	}
-	log.Infof("Result: %v", result)
-	// cognitive.RecognizeEmotion("https://portalstoragewuprod.azureedge.net/emotion/recognition1.jpg")
+	api.Init()
+	server := &http.Server{Addr: fmt.Sprintf(":%d", port), Handler: restful.DefaultContainer}
+	log.Infof("circle server listening on %d", port)
+	log.Fatal(server.ListenAndServe())
 }
