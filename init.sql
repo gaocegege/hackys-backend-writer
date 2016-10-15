@@ -9,8 +9,8 @@ CREATE TABLE tag
 CREATE TABLE point
 (
 	id int,
-	x  double,
-	y  double,
+	x  real,
+	y  real,
 	tag_id int,
 	time_stamp int,
 	tag varchar(255)
