@@ -50,5 +50,8 @@ func PushPointToDB(point *Point) {
 		// Anger
 		pointInDB.TagID = 1
 	}
-	db.Create(pointInDB)
+	err = db.Create(pointInDB)
+	if err != nil {
+		log.Warnf("DB error: %v", err)
+	}
 }
