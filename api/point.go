@@ -6,7 +6,13 @@ import (
 	"github.com/emicklei/go-restful"
 	"github.com/gaocegege/hackys-backend-writer/cognitive"
 	"github.com/gaocegege/hackys-backend-writer/pkg/log"
+	"gopkg.in/pg.v4"
 )
+
+var db = pg.Connect(&pg.Options{
+	User:     "postgres",
+	Password: "password",
+})
 
 func createPoint(request *restful.Request, response *restful.Response) {
 	point := &Point{}
@@ -32,4 +38,17 @@ func PushPointToDB(point *Point) {
 		return
 	}
 	log.Infof("Result: %v", result)
+
+	pointInDB := &PointInDB{}
+	pointInDB.TimeStamp = point.Date
+	pointInDB.X = point.Location.Lat
+	pointInDB.Y = point.Location.Lng
+	if result.Documents[0].Score > 0.5 {
+		// Happy
+		pointInDB.TagID = 5
+	} else {
+		// Anger
+		pointInDB.TagID = 1
+	}
+	db.Create(pointInDB)
 }

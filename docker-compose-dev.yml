@@ -1,7 +1,0 @@
-postgres:
-    image: postgres:9
-    environment:
-      POSTGRES_PASSWORD: password
-
-writer:
-	image: gaocegege/hackys-writer:latest

@@ -23,3 +23,11 @@ type CreatePointResponse struct {
 	// Return the error message. This is used to provide user-facing errors.
 	ErrorMessage string `json:"error_msg,omitempty"`
 }
+
+type PointInDB struct {
+	ID        int
+	X         float32
+	Y         float32
+	TagID     int32
+	TimeStamp float32
+}
