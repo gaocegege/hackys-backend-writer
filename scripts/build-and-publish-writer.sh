@@ -6,7 +6,7 @@ cd $ROOT
 
 docker run --rm \
        -v `pwd`:/go/src/github.com/gaocegege/hackys-backend-writer \
-       -e GOPATH=/go:/go/src/github.com/gaocegege/hackys-backend-writer/vendor index.caicloud.io/caicloud/golang:1.6 sh \
+       -e GOPATH=/go:/go/src/github.com/gaocegege/hackys-backend-writer/vendor golang:1.6 sh \
        -c "cd /go/src/github.com/gaocegege/hackys-backend-writer && go build -o app"
 docker build -t gaocegege/hackys-writer .
 docker push gaocegege/hackys-writer
