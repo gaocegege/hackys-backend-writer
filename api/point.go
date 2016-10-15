@@ -10,7 +10,7 @@ import (
 )
 
 var db = pg.Connect(&pg.Options{
-	Addr:     "localhost",
+	Addr:     "localhost:5432",
 	User:     "postgres",
 	Password: "password",
 	Database: "writer",
