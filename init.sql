@@ -6,6 +6,16 @@ CREATE TABLE tag
 	tag varchar(255)
 );
 
+CREATE TABLE point
+(
+	id int,
+	x  double,
+	y  double,
+	tag_id int,
+	time_stamp int,
+	tag varchar(255)
+);
+
 INSERT INTO "tag" (id, tag) VALUES (1, 'anger');
 INSERT INTO "tag" (id, tag) VALUES (2, 'contempt');
 INSERT INTO "tag" (id, tag) VALUES (3, 'disgust');
