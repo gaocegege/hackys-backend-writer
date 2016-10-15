@@ -10,8 +10,10 @@ import (
 )
 
 var db = pg.Connect(&pg.Options{
+	Addr:     "localhost",
 	User:     "postgres",
 	Password: "password",
+	Database: "writer",
 })
 
 func createPoint(request *restful.Request, response *restful.Response) {
