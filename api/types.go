@@ -25,6 +25,7 @@ type CreatePointResponse struct {
 }
 
 type PointInDB struct {
+	TableName struct{} `sql:"point,alias:point"`
 	ID        int
 	X         float32
 	Y         float32
