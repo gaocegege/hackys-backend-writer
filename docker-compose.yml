@@ -13,7 +13,7 @@ writer:
     - "8088:8088"
 
 reader:
-    image: gaocegege:hackys-reader:latest
+    image: gaocegege/hackys-reader:latest
     links:
     - "postgres:postgres"
     ports:
