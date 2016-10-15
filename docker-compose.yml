@@ -6,4 +6,4 @@ postgres:
 writer:
     image: gaocegege/hackys-writer:latest
     ports:
-    - "8088"
+    - "8088:8088"
